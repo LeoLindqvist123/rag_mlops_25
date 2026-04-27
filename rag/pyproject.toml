@@ -1,0 +1,21 @@
+[project]
+name = "rag"
+version = "0.1.0"
+description = "RAG project"
+readme = "README.md"
+authors = [
+    { name = "Leo Lindqvist Kröhnert", email = "leolikro01@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = ["backend", "frontend"]
+
+[tool.uv.sources]
+backend = { workspace = true }
+frontend = { workspace = true }
+
+[tool.uv.workspace]
+members = ["rag/src/rag/frontend", "rag/src/rag/backend"]
+
+[build-system]
+requires = ["uv_build>=0.10.7,<0.11.0"]
+build-backend = "uv_build"
